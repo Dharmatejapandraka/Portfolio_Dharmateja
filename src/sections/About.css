@@ -1,0 +1,548 @@
+
+.about-section {
+  position: relative;
+  min-height: 680px;
+  padding: 100px 0 55px;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 76% 48%, rgba(111, 57, 190, 0.17), transparent 39%),
+    radial-gradient(ellipse at 10% 80%, rgba(105, 52, 180, 0.09), transparent 35%),
+    var(--bg-primary, #090711);
+  color: var(--text-primary, #fff);
+}
+
+/* Background decorations */
+
+.about-background-glow {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  top: 50%;
+  right: 12%;
+  transform: translateY(-50%);
+  background: rgba(128, 69, 224, 0.12);
+  filter: blur(110px);
+  border-radius: 50%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.about-dot-pattern {
+  position: absolute;
+  width: 150px;
+  height: 130px;
+  opacity: 0.42;
+  background-image: radial-gradient(#a875ff 2px, transparent 2px);
+  background-size: 27px 27px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.about-dots-left {
+  top: 35px;
+  left: 30px;
+}
+
+.about-dots-right {
+  bottom: 30px;
+  right: 25px;
+}
+
+/* Main layout */
+
+.about-reference-layout {
+  position: relative;
+  width: min(1280px, 88%);
+  min-height: 510px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 35px;
+}
+
+/* Left content */
+
+.about-reference-content {
+  position: relative;
+  z-index: 5;
+  max-width: 590px;
+  padding: 20px 0;
+}
+
+.about-reference-label {
+  display: block;
+  margin-bottom: 14px;
+  color: #b58aff;
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.about-reference-name {
+  margin: 0;
+  color: #f7f2ff;
+  font-size: clamp(43px, 5.3vw, 72px);
+  font-weight: 900;
+  letter-spacing: -3px;
+  line-height: 1.12;
+  white-space: nowrap;
+}
+
+.about-reference-name span {
+  color: #a875ff;
+}
+
+.about-reference-role {
+  margin: 12px 0 25px;
+  font-size: clamp(23px, 2.7vw, 35px);
+  font-weight: 600;
+  letter-spacing: -0.8px;
+  color: #b68aff;
+}
+
+.about-reference-description {
+  max-width: 530px;
+  margin: 0 0 13px;
+  color: var(--text-secondary, #b2aabc);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+/* Technology icons */
+
+.about-tech-icons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 35px;
+}
+
+.about-tech-item {
+  width: 65px;
+  height: 65px;
+  display: grid;
+  place-items: center;
+  color: #c09aff;
+  border: 1px solid rgba(174, 128, 255, 0.38);
+  border-radius: 16px;
+  background: rgba(145, 76, 255, 0.07);
+  box-shadow: inset 0 0 15px rgba(145, 76, 255, 0.04);
+  transition: 0.3s ease;
+}
+
+.about-tech-item:hover {
+  color: #fff;
+  background: rgba(145, 76, 255, 0.22);
+  border-color: #b58aff;
+  box-shadow: 0 0 25px rgba(145, 76, 255, 0.25);
+}
+
+.about-reference-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 32px;
+  padding: 13px 20px;
+  color: #fff;
+  background: linear-gradient(110deg, #7845dc, #a06aff);
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.about-reference-cta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(123, 72, 221, 0.35);
+}
+
+.about-reference-cta span {
+  font-size: 18px;
+}
+
+/* Right portrait composition */
+
+.about-reference-visual {
+  position: relative;
+  width: 100%;
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+}
+
+.about-orbit-glow {
+  position: absolute;
+  width: 370px;
+  height: 370px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(143, 79, 239, 0.42),
+    rgba(107, 58, 187, 0.16) 58%,
+    transparent 75%
+  );
+  filter: blur(14px);
+  z-index: -2;
+}
+
+.about-portrait-circle {
+  position: relative;
+  width: min(390px, 75%);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 50%;
+  background: radial-gradient(circle, #43256e, #160e29 75%);
+  border: 2px solid rgba(180, 135, 255, 0.8);
+  box-shadow:
+    0 0 25px rgba(155, 97, 255, 0.38),
+    0 0 75px rgba(124, 69, 219, 0.25),
+    inset 0 0 30px rgba(165, 110, 255, 0.15);
+  z-index: 2;
+}
+
+.about-reference-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 24%;
+  transform: scale(1.08);
+  transition: transform 0.7s ease;
+}
+
+.about-portrait-circle:hover .about-reference-photo {
+  transform: scale(1.15);
+}
+
+/* Orbital rings */
+
+.about-orbit {
+  position: absolute;
+  width: 440px;
+  height: 440px;
+  border: 1px solid rgba(173, 124, 255, 0.55);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.orbit-one {
+  transform: scale(1);
+  animation: aboutOrbitPulse 5s ease-in-out infinite;
+}
+
+.orbit-two {
+  width: 490px;
+  height: 490px;
+  border-color: rgba(151, 101, 235, 0.38);
+  animation: aboutOrbitRotate 28s linear infinite;
+}
+
+.orbit-three {
+  width: 530px;
+  height: 530px;
+  border-color: rgba(151, 101, 235, 0.20);
+  transform: rotate(-20deg) scaleY(0.91);
+  animation: aboutOrbitRotate 35s linear infinite reverse;
+}
+
+@keyframes aboutOrbitPulse {
+  0%, 100% {
+    transform: scale(0.98);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes aboutOrbitRotate {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+/* Glowing orbital particles */
+
+.about-orbit-dot {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #d5baff;
+  box-shadow:
+    0 0 9px #b58aff,
+    0 0 20px #9655f4;
+  z-index: 4;
+}
+
+.orbit-dot-one {
+  top: 14%;
+  right: 25%;
+}
+
+.orbit-dot-two {
+  bottom: 16%;
+  left: 15%;
+  width: 6px;
+  height: 6px;
+}
+
+.orbit-dot-three {
+  top: 45%;
+  right: 4%;
+  width: 5px;
+  height: 5px;
+}
+
+/* Floating label */
+
+.about-floating-card {
+  position: absolute;
+  top: 19%;
+  right: -1%;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 14px 17px;
+  border: 1px solid rgba(180, 135, 255, 0.25);
+  border-radius: 10px;
+  background: rgba(23, 14, 39, 0.85);
+  backdrop-filter: blur(14px);
+  color: #e6d7ff;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  animation: aboutFloat 4s ease-in-out infinite;
+}
+
+.about-floating-status {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #b58aff;
+  box-shadow: 0 0 12px #a875ff;
+}
+
+@keyframes aboutFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+/* Caption */
+
+.about-visual-caption {
+  position: absolute;
+  bottom: 1%;
+  display: flex;
+  gap: 20px;
+  color: #a98bda;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* Footer */
+
+.about-reference-footer {
+  width: min(1280px, 88%);
+  margin: 45px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(164, 125, 255, 0.15);
+  display: flex;
+  justify-content: space-between;
+  color: #81758f;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+/* Light theme */
+
+[data-theme="light"] .about-section {
+  background:
+    radial-gradient(ellipse at 76% 48%, rgba(130, 83, 204, 0.13), transparent 40%),
+    #f7f4fc;
+  color: #211831;
+}
+
+[data-theme="light"] .about-reference-name {
+  color: #211831;
+}
+
+[data-theme="light"] .about-reference-description {
+  color: #70677f;
+}
+
+[data-theme="light"] .about-floating-card {
+  background: rgba(255, 255, 255, 0.9);
+  color: #55358a;
+  border-color: rgba(112, 70, 190, 0.25);
+}
+
+[data-theme="light"] .about-tech-item {
+  background: rgba(145, 76, 255, 0.06);
+}
+
+[data-theme="light"] .about-reference-footer {
+  border-color: rgba(112, 70, 190, 0.18);
+}
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+  .about-reference-layout {
+    width: 90%;
+    gap: 10px;
+  }
+
+  .about-reference-name {
+    font-size: clamp(38px, 5vw, 55px);
+  }
+
+  .about-portrait-circle {
+    width: 78%;
+  }
+
+  .about-orbit {
+    width: 390px;
+    height: 390px;
+  }
+
+  .orbit-two {
+    width: 430px;
+    height: 430px;
+  }
+
+  .orbit-three {
+    width: 465px;
+    height: 465px;
+  }
+}
+
+@media (max-width: 760px) {
+  .about-section {
+    padding: 85px 0 40px;
+  }
+
+  .about-reference-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .about-reference-content {
+    order: 2;
+    max-width: 100%;
+  }
+
+  .about-reference-visual {
+    order: 1;
+    min-height: 420px;
+  }
+
+  .about-portrait-circle {
+    width: min(310px, 72%);
+  }
+
+  .about-orbit {
+    width: 350px;
+    height: 350px;
+  }
+
+  .orbit-two {
+    width: 390px;
+    height: 390px;
+  }
+
+  .orbit-three {
+    width: 420px;
+    height: 420px;
+  }
+
+  .about-floating-card {
+    right: 0;
+    top: 12%;
+  }
+
+  .about-reference-name {
+    font-size: clamp(39px, 9vw, 58px);
+    white-space: normal;
+  }
+
+  .about-reference-description {
+    font-size: 14px;
+  }
+
+  .about-reference-footer {
+    width: 90%;
+    gap: 15px;
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 430px) {
+  .about-reference-visual {
+    min-height: 350px;
+  }
+
+  .about-portrait-circle {
+    width: 250px;
+  }
+
+  .about-orbit {
+    width: 285px;
+    height: 285px;
+  }
+
+  .orbit-two {
+    width: 320px;
+    height: 320px;
+  }
+
+  .orbit-three {
+    width: 345px;
+    height: 345px;
+  }
+
+  .about-floating-card {
+    top: 8%;
+    right: -3px;
+    padding: 10px;
+    font-size: 8px;
+  }
+
+  .about-reference-name {
+    letter-spacing: -2px;
+  }
+
+  .about-tech-icons {
+    gap: 10px;
+  }
+
+  .about-tech-item {
+    width: 55px;
+    height: 55px;
+  }
+
+  .about-reference-footer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
